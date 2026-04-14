@@ -1,75 +1,57 @@
 # Como rodar o backend (Django)
 
 Instruções pensadas para **Windows + PowerShell**.
-
 Para **Linux/macOS**, use os comandos na seção correspondente.
 
-O `manage.py` fica em `api/`.
+## 1. Criar e ativar um ambiente virtual (recomendado)
 
-## Criar e ativar um ambiente virtual (recomendado)
-
-Se você já tem a pasta `env/` no projeto, pode reutilizar.
+Abra o terminal na **raiz do repositório**. Se você já tem a pasta `env/` no projeto, pode reutilizar.
 
 ### Windows (PowerShell)
-
 ```powershell
-# na raiz do repositório
 python -m venv env
-\env\Scripts\Activate.ps1
+.\env\Scripts\Activate.ps1
 ```
 
 ### Linux/macOS (bash)
-
 ```bash
-# na raiz do repositório
 python3 -m venv env
 source env/bin/activate
 ```
 
-## Instalar dependências
-
-### Windows (PowerShell)
-
-```powershell
-python -m pip install -r api\requirements.txt
-```
-
-### Linux/macOS (bash)
+## 2. Acessar a pasta da API
+O arquivo `manage.py` e as configurações ficam dentro da pasta `api/`. Entre nela para rodar os próximos comandos:
 
 ```bash
-python -m pip install -r api/requirements.txt
+cd api
 ```
+*(Todos os comandos abaixo devem ser executados dentro desta pasta)*
 
-## Rodar migrations
+## 3. Instalar dependências
 
-### Windows (PowerShell)
-
-```powershell
-python api\manage.py migrate
-```
-
-### Linux/macOS (bash)
-
+### Windows (PowerShell) / Linux/macOS (bash)
 ```bash
-python api/manage.py migrate
+python -m pip install -r requirements.txt
 ```
 
-## Subir o servidor
+## 4. Rodar migrations
 
-### Windows (PowerShell)
-
-```powershell
-python api\manage.py runserver
-```
-
-### Linux/macOS (bash)
-
+### Windows (PowerShell) / Linux/macOS (bash)
 ```bash
-python api/manage.py runserver
+python manage.py migrate
+```
+
+## 5. Subir o servidor
+
+### Windows (PowerShell) / Linux/macOS (bash)
+```bash
+python manage.py runserver
 ```
 
 O backend sobe por padrão em:
 - `http://127.0.0.1:8000/`
+
+---
 
 ## Endpoints úteis
 
@@ -77,5 +59,3 @@ O backend sobe por padrão em:
 - OpenAPI schema (JSON): `http://127.0.0.1:8000/schema/`
 - Swagger UI: `http://127.0.0.1:8000/docs/`
 - Redoc: `http://127.0.0.1:8000/redoc/`
-
----
