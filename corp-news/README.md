@@ -1,7 +1,6 @@
 # CORP NEWS — Frontend
 
-Feito por Jonas Silva Nascimento
-Para a vaga de estagiário Front-End
+Feito por Jonas Silva Nascimento para a vaga de estagiário Front-End
 
 ## Estrutura do Projeto
 
